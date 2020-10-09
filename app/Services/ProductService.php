@@ -17,15 +17,15 @@ class ProductService
 
             $picture = $data['picture'];
 
-            $name = uniqid() . '_' . trim($picture->getClientOriginalName());
+//            $name = uniqid() . '_' . trim($picture->getClientOriginalName());
 
             $picture->move("assets/admin/products",$picture->getClientOriginalName());
 
             if (request()->method() == 'PUT') {
                 File::delete('assets/photo/' . $product->picture);
-                return ProductRepository::update($data, $id, $name);
+                return ProductRepository::update($data, $id, $picture->getClientOriginalName());
             } else {
-                return ProductRepository::store($data, $name);
+                return ProductRepository::store($data, $picture->getClientOriginalName());
             }
         }
 

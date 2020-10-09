@@ -26,6 +26,15 @@ Route::group(['namespace' => 'Admin'], function () {
     });
 });
 
+Route::get('/', 'Web\ProductController@index');
+
+Route::group(['namespace' => 'Web'], function () {
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/', 'ProductController@index');
+        Route::get('/{slug}', 'ProductController@detail');
+    });
+});
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
