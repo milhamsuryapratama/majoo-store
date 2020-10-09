@@ -24,8 +24,9 @@
 
             <form method="POST">
                 @csrf
-                <input type="text" value="{{ $product->id }}"/> <br/> <br/>
-                <button class="btn btn-primary">Buy Now</button>
+                <input type="number" size="4" id="qty" name="qty" value="1" min="1" step="1" class="form-control" />
+                <input type="hidden" value="{{ $product->id }}"/> <br/> <br/>
+                <button type="submit" class="btn btn-primary">Buy Now</button>
             </form>
         </div>
     </div>
