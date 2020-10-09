@@ -33,6 +33,13 @@ Route::group(['namespace' => 'Web'], function () {
         Route::get('/', 'ProductController@index');
         Route::get('/{slug}', 'ProductController@detail');
     });
+
+    Route::group(['prefix' => 'cart'], function () {
+        Route::get('/', 'CartController@index')->name('cart');
+        Route::post('/', 'CartController@store');
+        Route::get('/delete/{id}', 'CartController@delete');
+        Route::post('/change_qty', 'CartController@change_qty');
+    });
 });
 
 Auth::routes();
