@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/admin/login', 'Admin\LoginController@index');
 Route::post('/admin/login', 'Admin\LoginController@login');
 Route::get('/admin/dashboard', 'Admin\DashboardController@index');
+Route::get('/admin/logout', 'Admin\LoginController@logout');
 
 Auth::routes();
 

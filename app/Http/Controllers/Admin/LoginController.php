@@ -13,7 +13,7 @@ class LoginController extends Controller
         if (Auth::guard('admin')->check()) {
             return redirect()->to('admin/dashboard');
         }
-        
+
         return view('admin/login');
     }
 
@@ -25,5 +25,11 @@ class LoginController extends Controller
         } else {
             return redirect()->back()->with(['error' => 'Login error, check your username anda password again']);
         }
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->to('admin/login');
     }
 }
