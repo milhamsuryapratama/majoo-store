@@ -65,7 +65,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['product'] = Product::findOrFail($id);
+        return view('admin.product.edit', $data);
     }
 
     /**
@@ -75,9 +76,13 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $productRequest, $id)
     {
-        //
+        $productRequest->validated();
+
+        ProductService::validatePicture($productRequest, $id);
+
+        return redirect()->route('products.index')->with('success', 'Product has been updated');
     }
 
     /**

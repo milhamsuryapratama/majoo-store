@@ -18,4 +18,16 @@ class ProductRepository
             'picture' => $name
         ]);
     }
+
+    public static function update($data, $id, $name)
+    {
+        return Product::find($id)->update([
+            'product_name' => $data['product_name'],
+            'price' => $data['price'],
+            'stock' => $data['stock'],
+            'description' => $data['description'],
+            'slug' => Str::slug($data['product_name']),
+            'picture' => $name
+        ]);
+    }
 }
