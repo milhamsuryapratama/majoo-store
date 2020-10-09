@@ -22,10 +22,10 @@
             <h3>Rp. {{ $product->price }}</h3>
             <p>{{ $product->description }}</p>
 
-            <form method="POST">
+            <form action="{{ URL::to('cart') }}" method="POST">
                 @csrf
                 <input type="number" size="4" id="qty" name="qty" value="1" min="1" step="1" class="form-control" />
-                <input type="hidden" value="{{ $product->id }}"/> <br/> <br/>
+                <input type="hidden" value="{{ $product->id }}" name="product_id"/> <br/> <br/>
                 <button type="submit" class="btn btn-primary">Buy Now</button>
             </form>
         </div>
