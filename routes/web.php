@@ -20,6 +20,12 @@ Route::post('/admin/login', 'Admin\LoginController@login');
 Route::get('/admin/dashboard', 'Admin\DashboardController@index');
 Route::get('/admin/logout', 'Admin\LoginController@logout');
 
+Route::group(['namespace' => 'Admin'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
+        Route::resource('products', 'ProductController');
+    });
+});
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
