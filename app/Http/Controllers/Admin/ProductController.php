@@ -17,6 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $data['title'] = 'Products';
         $data['products'] = Product::all();
         return view('admin.product.index', $data);
     }
@@ -28,7 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $data['title'] = 'Add Product';
+        return view('admin.product.create', $data);
     }
 
     /**
@@ -66,6 +68,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $data['product'] = Product::findOrFail($id);
+        $data['title'] = 'Products Edit - '. $data['product']->product_name;
         return view('admin.product.edit', $data);
     }
 
