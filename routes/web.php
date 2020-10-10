@@ -23,6 +23,12 @@ Route::get('/admin/logout', 'Admin\LoginController@logout');
 Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::resource('products', 'ProductController');
+
+        Route::group(['prefix' => 'transaction'], function () {
+            Route::get('/', 'TransactionController@index');
+            Route::get('/data/{id}', 'TransactionController@detail');
+            Route::post('/delivered/{id}', 'TransactionController@delivered');
+        });
     });
 });
 
