@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
         $data['title'] = "Products";
-        $data['products'] = Product::all();
+        $data['products'] = Product::orderBy('created_at', 'DESC')->get();
         return view('web.product', $data);
     }
 
