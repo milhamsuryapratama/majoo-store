@@ -28,7 +28,7 @@
                     </div>
                     <div class="size_color">
                         <div class="title">
-                            {{ $p->description }}
+                            {!! substr($p->description, 0, 50) !!} ...
                         </div>
                     </div>
                     <div class="price">

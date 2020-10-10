@@ -27,7 +27,7 @@
             <h2>{{ $product->product_name }}</h2>
             <hr>
             <h3>@currency($product->price)</h3>
-            <p>{{ $product->description }}</p>
+            <p>{!! $product->description !!}</p>
 
             <form action="{{ URL::to('cart') }}" method="POST">
                 @csrf
