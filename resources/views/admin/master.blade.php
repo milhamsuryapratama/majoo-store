@@ -62,6 +62,11 @@
                         <span class="inbox-num">3</span>
                     </li>
                     <li>
+                        <a href="{{ URL::to('admin/transaction') }}">
+                            <i class="fas fa-chart-bar"></i>Transactions</a>
+                        <span class="inbox-num">3</span>
+                    </li>
+                    <li>
                         <a href="#">
                             <i class="fas fa-shopping-basket"></i>Logout</a>
                     </li>
