@@ -13,6 +13,13 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-12">
+            @if(session('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
         <div class="col-md-6">
             <img src="{{ asset('assets/admin/products/'.$product->picture) }}" width="100%">
         </div>
