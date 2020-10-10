@@ -11,7 +11,7 @@ class LoginController extends Controller
     public function index()
     {
         if (Auth::guard('admin')->check()) {
-            return redirect()->to('admin/dashboard');
+            return redirect()->to('admin/products');
         }
 
         return view('admin/login');
@@ -20,7 +20,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->to('admin/dashboard');
+            return redirect()->to('admin/products');
 //            dd('sukses');
         } else {
             return redirect()->back()->with(['error' => 'Login error, check your username anda password again']);
