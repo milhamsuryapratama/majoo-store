@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form action="{{ URL::to('orders/paid') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="text" name="id" value="{{ $payment->id }}">
+                        <input type="hidden" name="id" value="{{ $payment->id }}">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ $payment->user->name }}" readonly>
