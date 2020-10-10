@@ -397,7 +397,8 @@
         </button>
 
         <a class="navbar-brand" href="#">
-            <h4 class="font-weight-bold">Logo</h4>
+            <img src="https://majoo.id/assets/dist/img/majoo@2x.png" width="150"/>
+{{--            <h4 class="font-weight-bold">Logo</h4>--}}
         </a>
 
         <ul class="navbar-nav ml-auto d-block d-md-none">
@@ -409,19 +410,19 @@
         <div class="collapse navbar-collapse">
             <form class="form-inline my-2 my-lg-0 mx-auto">
                 <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+{{--                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>--}}
             </form>
 
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span class="badge badge-danger">3</span></a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="btn btn-link" href="#"><i class="bx bxs-cart icon-single"></i> <span class="badge badge-danger">3</span></a>--}}
+{{--                </li>--}}
                 <li class="nav-item ml-md-3">
                     @if(Auth::check())
                         <a class="btn btn-sm" href="#"><i class="bx bxs-user-circle mr-1"></i> Halo {{ Auth::user()->name }}</a>
-                        <a class="btn btn-sm" href="#"><i class="bx bxs-user-circle mr-1"></i> Logout</a>
+                        <a class="btn btn-sm" href="{{ route('logout') }}"><i class="bx bxs-user-circle mr-1"></i> Logout</a>
                     @else
-                        <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a>
+                        <a class="btn btn-primary" href="{{ route('login') }}"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a>
                     @endif
                 </li>
             </ul>
@@ -434,16 +435,16 @@
     <div class="container">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <li class="nav-item {{ Request::segment(1) == '' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ URL::to('/') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
+                <li class="nav-item {{ Request::segment(1)  == 'product' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ URL::to('product') }}">Products</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::segment(1) == 'cart' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ URL::to('cart') }}">Cart</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ Request::segment(1) == 'orders' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ URL::to('orders') }}">Orders</a>
                 </li>
             </ul>
