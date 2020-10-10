@@ -40,6 +40,11 @@
                             <td colspan="5">No data</td>
                         </tr>
                     @endforelse
+                    <tr>
+                        <td class="actions text-center" colspan="6">
+                            {{ $orders->links() }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
