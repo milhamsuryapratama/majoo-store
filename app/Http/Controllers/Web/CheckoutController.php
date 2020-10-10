@@ -28,7 +28,7 @@ class CheckoutController extends Controller
         $cart = Cart::whereUserId(Auth::id())->get();
         $transaction = CheckoutRepository::store($checkoutRequest, $total, $cart);
 
-        dd($transaction);
-//        return redirect()->to('orders');
+//        dd($transaction);
+        return redirect()->to('orders');
     }
 }
