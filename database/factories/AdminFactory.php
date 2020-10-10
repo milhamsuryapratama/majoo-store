@@ -9,6 +9,7 @@ $factory->define(\App\Models\Admin::class, function (Faker $faker) {
     return [
         'name' => 'Admin',
         'email' => 'admin@gmail.com',
-        'password' => \Illuminate\Support\Facades\Hash::make('admin123')
+        'password' => \Illuminate\Support\Facades\Hash::make('admin123'),
+        'photo' => 'foto.jpg'
     ];
 });
