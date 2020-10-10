@@ -84,6 +84,7 @@
                                         <div class="col-12 col-md-9">
                                             <input type="file" id="picture" name="picture" class="form-control-file">
                                             <small class="form-text text-muted" style="color: red">{{ $errors ? $errors->first('picture') : '' }}</small>
+                                            <small>Current Picture <a href="{{ asset('assets/admin/products/'.$product->picture) }}" target="_blank">here</a></small>
                                         </div>
                                     </div>
                                     <div class="row form-group">
