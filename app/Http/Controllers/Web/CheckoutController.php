@@ -15,6 +15,7 @@ class CheckoutController extends Controller
 {
     public function index()
     {
+        $data['title'] = "Checkout";
         $data['carts'] = Cart::whereUserId(Auth::id())->get();
         $data['total'] = CartRepository::getTotal();
         return view('web.checkout', $data);

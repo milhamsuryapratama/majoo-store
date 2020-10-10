@@ -13,6 +13,7 @@ class OrderController extends Controller
 {
     public function index()
     {
+        $data['title'] = "Orders";
         $data['orders'] = Transaction::orderBy('created_at', 'DESC')->whereUserId(Auth::id())->paginate(3);
         return view('web.order', $data);
     }
@@ -20,11 +21,13 @@ class OrderController extends Controller
     public function detail($id)
     {
         $data['order'] = Transaction::with(['details', 'details.product'])->findOrFail($id);
+        $data['title'] = "Order Details - ". $data['order']->id;
         return view('web.order_detail', $data);
     }
 
     public function pay(Request $request)
     {
+        $data['title'] = "Payment Page";
         $id = $request->query('id');
         $data['payment'] = Transaction::findOrFail($id);
         return view('web.pay', $data);

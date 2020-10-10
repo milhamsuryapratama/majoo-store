@@ -14,6 +14,7 @@ class CartController extends Controller
 {
     public function index()
     {
+        $data['title'] = "Cart";
         $data['carts'] = Cart::with('product')->where('user_id', Auth::id())->get();
         $data['total'] = CartRepository::getTotal();
         return view('web.cart', $data);

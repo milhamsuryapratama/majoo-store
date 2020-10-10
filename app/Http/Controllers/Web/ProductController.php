@@ -10,12 +10,14 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $data['title'] = "Products";
         $data['products'] = Product::all();
         return view('web.product', $data);
     }
 
     public function detail($slug)
     {
+        $data['title'] = "Products";
         $data['product'] = Product::whereSlug($slug)->first();
         return view('web/product_detail', $data);
     }
