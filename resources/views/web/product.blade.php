@@ -18,7 +18,7 @@
                 <div class="product_item">
                     <div class="img">
                         <a href="{{ URL::to('product/'.$p->slug) }}">
-                            <img src="{{ asset('assets/admin/products/'.$p->picture) }}" alt="{{ $p->product_name }}" style="width: 100%">
+                            <img src="{{ asset('assets/admin/products/'.$p->picture) }}" alt="{{ $p->product_name }}">
                         </a>
                         <p class="brand_name">
                             <a href="{{ URL::to('product/'.$p->slug) }}">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="size_color">
                         <div class="title">
-                            {!! substr($p->description, 0, 50) !!} ...
+                            {!! substr($p->description, 0, 20) !!} ...
                         </div>
                     </div>
                     <div class="price">
