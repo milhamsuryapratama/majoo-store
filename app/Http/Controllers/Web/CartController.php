@@ -8,12 +8,13 @@ use App\Repositories\CartRepository;
 use App\Repositories\CartRespository;
 use App\Services\CartService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function index()
     {
-        $data['carts'] = Cart::with('product')->get();
+        $data['carts'] = Cart::with('product')->where('user_id', Auth::id())->get();
         $data['total'] = CartRepository::getTotal();
         return view('web.cart', $data);
     }
