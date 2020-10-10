@@ -551,22 +551,22 @@
     @yield('content')
 </div>
 
-<div class="utility-nav d-none d-md-block" style="position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-12 text-center">
-                <p class="small"><i class="bx bx-envelope"></i> Majoo Store
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="utility-nav d-none d-md-block" style="position: absolute;--}}
+{{--  right: 0;--}}
+{{--  bottom: 0;--}}
+{{--  left: 0;--}}
+{{--  padding: 1rem;--}}
+{{--  background-color: #efefef;--}}
+{{--  text-align: center;">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-12 col-md-12 text-center">--}}
+{{--                <p class="small"><i class="bx bx-envelope"></i> Majoo Store--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <!-- Jquery JS-->
 <script src="{{ asset('assets/admin/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
