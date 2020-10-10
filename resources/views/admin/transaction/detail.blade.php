@@ -133,26 +133,28 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong>Admin Actions</strong>
-                            </div>
-                            <div class="card-body card-block">
-                                <div class="row form-group">
-                                    <div class="col col-md-3">
-                                        <label for="text-input" class=" form-control-label">Action</label>
-                                    </div>
-                                    <div class="col-12 col-md-9">
-                                        <form method="POST" action="{{ URL::to('admin/transaction/delivered/'.$detail->id) }}">
-                                            @csrf
-                                            <button type="submit" class="btn btn-primary">Deliver ?</button>
-                                        </form>
+                    @if($detail->payment_process != 'Y')
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Admin Actions</strong>
+                                </div>
+                                <div class="card-body card-block">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Action</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <form method="POST" action="{{ URL::to('admin/transaction/delivered/'.$detail->id) }}">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Deliver ?</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
