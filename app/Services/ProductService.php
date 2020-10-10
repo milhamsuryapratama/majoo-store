@@ -22,12 +22,12 @@ class ProductService
 
             $img = ImageResize::make($picture->path());
 
-            $img->resize(195, 243)->save('assets/admin/products/'.$name);
+            $img->resize(296, 180)->save('assets/admin/products/'.$name);
 
 //            $picture->move("assets/admin/products",$picture->getClientOriginalName());
 
             if (request()->method() == 'PUT') {
-                File::delete('assets/admin/products' . $product->picture);
+                File::delete('assets/admin/products/' . $product->picture);
                 return ProductRepository::update($data, $id, $name);
             } else {
                 return ProductRepository::store($data, $name);
