@@ -40,6 +40,14 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
+                @elseif(session('error'))
+                    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+                        <span class="badge badge-pill badge-danger">Error</span>
+                        {{ session('error') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
                 @endif
                 <div class="row">
                     <div class="col-lg-12">
@@ -63,6 +71,11 @@
                                         <td>{{ $p->stock }}</td>
                                         <td>
                                             <a href="{{ route('products.edit', $p->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                            <form action="{{ route('products.destroy', $p->id) }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty
