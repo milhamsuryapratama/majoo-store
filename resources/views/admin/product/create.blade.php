@@ -104,3 +104,12 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(function () {
+            tinymce.init({
+                selector: '#description'
+            });
+        });
+    </script>
+@endpush

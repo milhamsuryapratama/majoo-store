@@ -283,6 +283,7 @@
 <script src="{{ asset('assets/admin/vendor/vector-map/jquery.vmap.sampledata.js') }}"></script>
 <script src="{{ asset('assets/admin/vendor/vector-map/jquery.vmap.world.js') }}"></script>
 <script src="{{ asset('assets/admin/vendor/dataTables/datatables.min.js') }}"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
 <script src="{{ asset('assets/admin/js/main.js') }}"></script>
 @stack('scripts')
 </body>
