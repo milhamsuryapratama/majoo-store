@@ -67,7 +67,7 @@
                     <td>
                         <form method="POST" action="{{ URL::to('checkout') }}">
                             @csrf
-                            <button type="submit" class="btn btn-primary">Checkout</button>
+                            <button type="submit" class="btn btn-primary" id="checkout">Checkout</button>
                         </form>
                     </td>
                 </tr>
