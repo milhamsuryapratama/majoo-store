@@ -61,7 +61,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>MAJOO-{{ $t->id }}</td>
                                             <td>{{ $t->user->name }}</td>
-                                            <td>{{ $t->total }}</td>
+                                            <td>@currency($t->total)</td>
                                             <td>{{ $t->created_at }}</td>
                                             <td>
                                                 <a href="{{ URL::to('admin/transaction/data/'.$t->id) }}" class="btn btn-primary">Detail</a>

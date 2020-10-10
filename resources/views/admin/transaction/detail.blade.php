@@ -72,13 +72,13 @@
                                         </td>
                                         <td>{{ $d->product->product_name }}</td>
                                         <td>{{ $d->qty }}</td>
-                                        <td>{{ $d->price }}</td>
-                                        <td>{{ $d->qty * $d->price }}</td>
+                                        <td>@currency($d->price)</td>
+                                        <td>@currency($d->qty * $d->price)</td>
                                     </tr>
                                 @endforeach
                                 <tr>
                                     <td colspan="4" class="text-right">Total</td>
-                                    <td colspan="4" class="text-right">{{ $detail->total }}</td>
+                                    <td colspan="4" class="text-right">@currency($detail->total)</td>
                                 </tr>
                                 </tbody>
                             </table>

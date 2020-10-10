@@ -59,7 +59,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $p->product_name }}</td>
-                                        <td>{{ $p->price }}</td>
+                                        <td>@currency($p->price)</td>
                                         <td>{{ $p->stock }}</td>
                                         <td>
                                             <a href="{{ route('products.edit', $p->id) }}" class="btn btn-warning btn-sm">Edit</a>
