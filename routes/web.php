@@ -29,6 +29,12 @@ Route::group(['namespace' => 'Admin'], function () {
             Route::get('/data/{id}', 'TransactionController@detail');
             Route::post('/delivered/{id}', 'TransactionController@delivered');
         });
+
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('/', 'AdminController@index');
+            Route::post('/update_password', 'AdminController@update_password');
+            Route::post('/update_photo', 'AdminController@update_photo');
+        });
     });
 });
 
