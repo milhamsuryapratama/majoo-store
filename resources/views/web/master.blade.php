@@ -396,7 +396,7 @@
             <i class="bx bx-menu icon-single"></i>
         </button>
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ URL::to('/') }}">
             <img src="https://majoo.id/assets/dist/img/majoo@2x.png" width="150"/>
 {{--            <h4 class="font-weight-bold">Logo</h4>--}}
         </a>

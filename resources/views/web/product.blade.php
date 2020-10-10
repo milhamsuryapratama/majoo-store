@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ URL::to('product') }}">Product</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
         @foreach($products as $p)
             <div class="col-md-3">
                 <div class="product_item">

@@ -5,8 +5,9 @@
         <div class="col-md-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="#">Orders</a></li>
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/orders') }}">Orders</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="#">MAJOO-{{ $order->id }}</a></li>
                 </ol>
             </nav>
         </div>

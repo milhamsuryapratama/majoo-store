@@ -5,8 +5,8 @@
         <div class="col-md-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="#">Cart</a></li>
+                    <li class="breadcrumb-item"><a href="{{ URL::to('/') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ URL::to('cart') }}">Cart</a></li>
                 </ol>
             </nav>
         </div>
@@ -34,16 +34,16 @@
                         <td scope="row">{{ $c->product->product_name }}</td>
                         <td>@currency($c->product->price)</td>
                         <td>
-                            <input type="button" class="minus" data-id="{{ $c->product->id }}" value="-">
+                            <input type="button" class="minus btn" data-id="{{ $c->product->id }}" value="-">
                             <input type="text" name="qty" value="{{ $c->qty }}" min="1" step="1" size="4" class="form-control qty" />
-                            <input type="button" class="plus" data-id="{{ $c->product->id }}" value="+">
+                            <input type="button" class="plus btn" data-id="{{ $c->product->id }}" value="+">
                             <small class="out" style="color: red;"></small>
                         </td>
                         <td scope="row" class="subtotal">
                             @currency($c->qty * $c->product->price)
                         </td>
                         <td scope="row">
-                            <a href="{{ URL::to('cart/delete/'.$c->id) }}" class="btn btn-danger">Remove</a>
+                            <a href="{{ URL::to('cart/delete/'.$c->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure ?')">Remove</a>
                         </td>
                     </tr>
                 @empty
