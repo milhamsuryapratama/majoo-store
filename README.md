@@ -11,11 +11,11 @@
       * `DB_USERNAME`=root
       * `DB_PASSWORD`=secret
 5. Pengaturan email di `.env`, ini digunakan untuk mengirim email verifikasi dan notifikasi
-       * `MAIL_DRIVER` : smtp
-       * `MAIL_HOST` : smtp.mailtrap.io
-       * `MAIL_PORT` : 2525
-       * `MAIL_USERNAME` : d88353424a9e23
-       * `MAIL_PASSWORD` : 73b13322beb99e
+      * `MAIL_DRIVER` : smtp
+      * `MAIL_HOST` : smtp.mailtrap.io
+      * `MAIL_PORT` : 2525
+      * `MAIL_USERNAME` : d88353424a9e23
+      * `MAIL_PASSWORD` : 73b13322beb99e
 6. Jalankan `php artisan key:generate`
 7. Jalankan `php artisan migrate` untuk membuat tabel pada database
 8. Jalankan `php artisan db:seed` mengisi data pada database
