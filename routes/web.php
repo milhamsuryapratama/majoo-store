@@ -51,6 +51,14 @@ Route::group(['namespace' => 'Web'], function () {
         Route::post('/', 'CheckoutController@index')->name('checkout');
         Route::post('/store', 'CheckoutController@store');
     });
+
+
+    Route::group(['prefix' => 'orders'], function () {
+        Route::get('/', 'OrderController@index')->name('orders');
+        Route::get('/data/{id}', 'OrderController@detail');
+        Route::get('/pay', 'OrderController@pay');
+        Route::post('/paid', 'OrderController@paid');
+    });
 });
 
 Auth::routes();
