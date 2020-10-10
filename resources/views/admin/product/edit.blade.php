@@ -1,9 +1,6 @@
 @extends('admin.master')
 
 @section('content')
-    @extends('admin.master')
-
-@section('content')
     <section class="au-breadcrumb m-t-75">
         <div class="section__content section__content--p30">
             <div class="container-fluid">
@@ -109,6 +106,18 @@
             tinymce.init({
                 selector: '#description'
             });
+
+            $("#stock").keypress(function (event) {
+                if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+                    event.preventDefault();
+                }
+            })
+
+            $("#price").keypress(function (event) {
+                if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+                    event.preventDefault();
+                }
+            })
         });
     </script>
 @endpush
