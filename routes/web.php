@@ -40,20 +40,20 @@ Route::group(['namespace' => 'Web'], function () {
         Route::get('/{slug}', 'ProductController@detail');
     });
 
-    Route::group(['prefix' => 'cart'], function () {
+    Route::group(['prefix' => 'cart', 'middleware' => 'auth'], function () {
         Route::get('/', 'CartController@index')->name('cart');
         Route::post('/', 'CartController@store');
         Route::get('/delete/{id}', 'CartController@delete');
         Route::post('/change_qty', 'CartController@change_qty');
     });
 
-    Route::group(['prefix' => 'checkout'], function () {
+    Route::group(['prefix' => 'checkout', 'middleware' => 'auth'], function () {
         Route::post('/', 'CheckoutController@index')->name('checkout');
         Route::post('/store', 'CheckoutController@store');
     });
 
 
-    Route::group(['prefix' => 'orders'], function () {
+    Route::group(['prefix' => 'orders', 'middleware' => 'auth'], function () {
         Route::get('/', 'OrderController@index')->name('orders');
         Route::get('/data/{id}', 'OrderController@detail');
         Route::get('/pay', 'OrderController@pay');
