@@ -10,6 +10,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use File;
 
 class AdminController extends Controller
 {
@@ -47,6 +48,8 @@ class AdminController extends Controller
             $photo = $updatePhotoRequest->file('photo');
             $user->photo = $photo->getClientOriginalName();
             $user->save();
+
+            File::delete('assets/admin/photo/' . $user->photo);
 
             $photo->move("assets/admin/photo",$photo->getClientOriginalName());
 
