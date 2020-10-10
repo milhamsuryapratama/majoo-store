@@ -37,8 +37,8 @@
                         </td>
                         <td>{{ $o->product->product_name }}</td>
                         <td>{{ $o->qty }}</td>
-                        <td>{{ $o->price }}</td>
-                        <td>{{ $o->qty * $o->price }}</td>
+                        <td>@currency($o->price)</td>
+                        <td>@currency($o->qty * $o->price)</td>
                     </tr>
                 @empty
                     <tr>

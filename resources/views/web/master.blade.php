@@ -418,7 +418,8 @@
                 </li>
                 <li class="nav-item ml-md-3">
                     @if(Auth::check())
-                        <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Halo {{ Auth::user()->name }}</a>
+                        <a class="btn btn-sm" href="#"><i class="bx bxs-user-circle mr-1"></i> Halo {{ Auth::user()->name }}</a>
+                        <a class="btn btn-sm" href="#"><i class="bx bxs-user-circle mr-1"></i> Logout</a>
                     @else
                         <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a>
                     @endif
@@ -434,29 +435,16 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ URL::to('/') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Schools</a>
+                    <a class="nav-link" href="{{ URL::to('cart') }}">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Publishers</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Support
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Delivery Information</a>
-                        <a class="dropdown-item" href="#">Privacy Policy</a>
-                        <a class="dropdown-item" href="#">Terms & Conditions</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{ URL::to('orders') }}">Orders</a>
                 </li>
             </ul>
         </div>

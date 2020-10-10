@@ -32,7 +32,7 @@
                             <img src="{{ asset('assets/admin/products/'.$c->product->picture) }}" width="100">
                         </th>
                         <td scope="row">{{ $c->product->product_name }}</td>
-                        <td>Rp. {{ $c->product->price }}</td>
+                        <td>@currency($c->product->price)</td>
                         <td>
                             <input type="button" class="minus" data-id="{{ $c->product->id }}" value="-">
                             <input type="text" name="qty" value="{{ $c->qty }}" min="1" step="1" size="4" class="form-control qty" />
@@ -40,7 +40,7 @@
                             <small class="out" style="color: red;"></small>
                         </td>
                         <td scope="row" class="subtotal">
-                            Rp. {{ $c->qty * $c->product->price }}
+                            @currency($c->qty * $c->product->price)
                         </td>
                         <td scope="row">
                             <a href="{{ URL::to('cart/delete/'.$c->id) }}" class="btn btn-danger">Remove</a>
@@ -61,7 +61,7 @@
                     <th scope="col">Total</th>
                 </tr>
                 <tr>
-                    <td class="total">Rp. {{ $total[0]['total'] }}</td>
+                    <td class="total">@currency($total[0]['total'])</td>
                 </tr>
                 <tr>
                     <td>

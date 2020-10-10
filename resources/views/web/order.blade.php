@@ -29,7 +29,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>MAJOO-{{ $o->id }}</td>
-                            <td>{{ $o->total }}</td>
+                            <td>@currency($o->total)</td>
                             <td>{{ $o->created_at }}</td>
                             <td>
                                 <a href="{{ URL::to('orders/data/'.$o->id) }}" class="btn btn-primary">Detail</a>

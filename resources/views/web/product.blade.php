@@ -10,7 +10,7 @@
                             <img src="{{ asset('assets/admin/products/'.$p->picture) }}" alt="{{ $p->product_name }}" style="width: 100%">
                         </a>
                         <p class="brand_name">
-                            <a href="#">
+                            <a href="{{ URL::to('product/'.$p->slug) }}">
                                 {{ $p->product_name }}
                             </a>
                         </p>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="price">
-                        <p>{{ $p->price }}</p>
+                        <p>@currency($p->price)</p>
                     </div>
                 </div>
             </div>

@@ -31,10 +31,10 @@
                             <img src="{{ asset('assets/admin/products/'.$c->product->picture) }}" width="100">
                         </th>
                         <td scope="row">{{ $c->product->product_name }}</td>
-                        <td>Rp. {{ $c->product->price }}</td>
+                        <td>@currency($c->product->price)</td>
                         <td>{{ $c->qty }}</td>
                         <td scope="row" class="subtotal">
-                            Rp. {{ $c->qty * $c->product->price }}
+                            @currency($c->qty * $c->product->price)
                         </td>
                     </tr>
                 @empty
@@ -46,7 +46,7 @@
                     <th scope="col" colspan="5" class="text-right">Total</th>
                 </tr>
                 <tr>
-                    <td class="total text-right" colspan="5">Rp. {{ $total[0]['total'] }}</td>
+                    <td class="total text-right" colspan="5">@currency($total[0]['total'])</td>
                 </tr>
                 </tbody>
             </table>
