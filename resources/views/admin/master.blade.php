@@ -45,8 +45,11 @@
         <div class="menu-sidebar2__content js-scrollbar1">
             <div class="account2">
                 <div class="image img-120">
-                    <img src="https://majoo.id/assets/dist/img/majoo@2x.png"
-                         alt="{{ Auth::guard('admin')->user()->name }}"/>
+                    @if(is_null(Auth::guard('admin')->user()->photo))
+                        <img src="https://majoo.id/assets/dist/img/majoo@2x.png" alt="Majoo Store" width="150"/>
+                    @else
+                        <img src="{{ asset('assets/admin/photo/'.Auth::guard('admin')->user()->photo) }}" alt="Photo" width="150"/>
+                    @endif
                 </div>
                 <h4 class="name">{{ Auth::guard('admin')->user()->name }}</h4>
                 <a href="{{ URL::to('admin/logout') }}">Sign out</a>
@@ -61,8 +64,12 @@
                         <a href="{{ URL::to('admin/transaction') }}">
                             <i class="fas fa-chart-bar"></i>Transactions</a>
                     </li>
+                    <li class="{{ Request::segment(2) == 'profile' ? 'active': '' }}">
+                        <a href="{{ URL::to('admin/profile') }}">
+                            <i class="fas fa-chart-bar"></i>Profile</a>
+                    </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ URL::to('admin/logout') }}">
                             <i class="fas fa-shopping-basket"></i>Logout</a>
                     </li>
                 </ul>
