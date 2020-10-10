@@ -32,6 +32,7 @@
 
     <!-- Main CSS-->
     <link href="{{ asset('assets/admin/css/theme.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('assets/admin/vendor/dataTables/datatables.min.css') }}" rel="stylesheet">
 </head>
 <body class="animsition">
 <div class="page-wrapper">
@@ -281,6 +282,8 @@
 <script src="{{ asset('assets/admin/vendor/vector-map/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('assets/admin/vendor/vector-map/jquery.vmap.sampledata.js') }}"></script>
 <script src="{{ asset('assets/admin/vendor/vector-map/jquery.vmap.world.js') }}"></script>
+<script src="{{ asset('assets/admin/vendor/dataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('assets/admin/js/main.js') }}"></script>
+@stack('scripts')
 </body>
 </html>

@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="table-responsive">
-                            <table class="table table-borderless table-striped table-earning">
+                            <table class="table table-borderless table-striped table-earning" id="table-product">
                                 <thead>
                                 <tr>
                                     <th>NO</th>
@@ -79,3 +79,11 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function () {
+           $("#table-product").DataTable();
+        });
+    </script>
+@endpush
