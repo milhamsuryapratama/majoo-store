@@ -27,9 +27,9 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         $rule = [
-            'price' => ['required'],
+            'price' => ['required', 'numeric'],
             'description' => ['required'],
-            'stock' => ['required']
+            'stock' => ['required', 'numeric']
         ];
 
         if (request()->isMethod('PUT')) {
