@@ -35,7 +35,7 @@
                         <td>@currency($c->product->price)</td>
                         <td>
                             <input type="button" class="minus btn" data-id="{{ $c->product->id }}" value="-">
-                            <input type="text" name="qty" value="{{ $c->qty }}" min="1" step="1" size="4" class="form-control qty" />
+                            <input type="text" name="qty" value="{{ $c->qty }}" min="1" step="1" size="4" class="form-control qty" data-id="{{ $c->product->id }}" />
                             <input type="button" class="plus btn" data-id="{{ $c->product->id }}" value="+">
                             <small class="out" style="color: red;"></small>
                         </td>
@@ -105,6 +105,7 @@
             $(".qty").keypress(function (event) {
                 if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
                     event.preventDefault();
+                    return
                 }
             });
         });
