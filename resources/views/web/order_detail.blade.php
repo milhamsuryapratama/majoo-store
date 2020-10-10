@@ -47,7 +47,7 @@
                 @endforelse
                 <tr>
                     <th colspan="4" class="text-right">Total</th>
-                    <td>{{ $order->total }}</td>
+                    <td>@currency($order->total)</td>
                 </tr>
                 @if($order->payment_process != 'Y')
                     <tr>
