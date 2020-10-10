@@ -133,7 +133,7 @@
                         </div>
                     </div>
 
-                    @if($detail->payment_process != 'Y')
+                    @if($detail->status != 'delivered')
                         <div class="col-lg-4">
                             <div class="card">
                                 <div class="card-header">
