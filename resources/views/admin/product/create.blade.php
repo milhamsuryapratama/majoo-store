@@ -29,8 +29,8 @@
         </div>
     </section>
 
-    <div class="main-content">
-        <div class="section__content section__content--p30">
+    <section class="statistic">
+        <div class="section__content section__content--p10">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -91,9 +91,9 @@
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
-{{--                                        <button type="reset" class="btn btn-danger btn-sm">--}}
-{{--                                            <i class="fa fa-ban"></i> Reset--}}
-{{--                                        </button>--}}
+                                        {{--                                        <button type="reset" class="btn btn-danger btn-sm">--}}
+                                        {{--                                            <i class="fa fa-ban"></i> Reset--}}
+                                        {{--                                        </button>--}}
                                     </div>
                                 </form>
                             </div>
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 @push('scripts')
     <script>

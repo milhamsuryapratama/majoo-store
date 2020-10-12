@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    <div class="main-content">
+    <section class="statistic">
         <div class="section__content section__content--p30">
             <div class="container-fluid">
                 @if(session('success'))
@@ -158,5 +158,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
