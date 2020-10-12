@@ -85,7 +85,7 @@
                     <div class="header-wrap2">
                         <div class="logo d-block d-lg-none">
                             <a href="#">
-                                <img src="https://majoo.id/assets/dist/img/majoo@2x.png" alt="CoolAdmin"/>
+                                <img src="https://majoo.id/assets/dist/img/majoo@2x.png" alt="Majoo Store"/>
                             </a>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
         <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
             <div class="logo">
                 <a href="#">
-                    <img src="https://majoo.id/assets/dist/img/majoo@2x.png" alt="Cool Admin"/>
+                    <img src="https://majoo.id/assets/dist/img/majoo@2x.png" alt="Majoo Store"/>
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar2">
@@ -258,8 +258,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="copyright">
-                            <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
-                                        href="https://colorlib.com">Colorlib</a>.</p>
+                            <p>Copyright © 2020. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
