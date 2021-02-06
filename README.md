@@ -1,6 +1,6 @@
 ## How to setup
 
-1. Clone project url
+1. Clone project url using git
 2. Jalankan `composer install`
 3. Duplicate file `.env.example` and ubah nama file menjadi `.env`
 4. Pengaturan database
